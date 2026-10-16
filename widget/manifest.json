@@ -1,0 +1,24 @@
+{
+  "widget": {
+    "name": "widget.name",
+    "description": "widget.description",
+    "short_description": "widget.short_description",
+    "version": "0.1.0",
+    "interface_version": 2,
+    "init_once": false,
+    "locale": ["pt"],
+    "installation": false,
+    "support": { "link": "https://exodosaude.com/cotacao/" }
+  },
+  "locations": ["salesbot_designer"],
+  "salesbot_designer": {
+    "qualify": {
+      "name": "salesbot.name",
+      "settings": {
+        "endpoint": { "name": "salesbot.endpoint", "type": "url", "default_value": "", "manual": true },
+        "channel": { "name": "salesbot.channel", "type": "text", "default_value": "kommo", "manual": true },
+        "context": { "name": "salesbot.context", "type": "text", "default_value": "private_chat", "manual": true }
+      }
+    }
+  }
+}

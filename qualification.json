@@ -1,0 +1,222 @@
+{
+  "company": "Êxodo Saúde",
+  "source_url": "https://exodosaude.com/cotacao/",
+  "source_verified": true,
+  "notice": "Roteiro conferido com o questionário da Êxodo Saúde. A triagem reúne os dados; valores, rede e carências são confirmados pelo consultor.",
+  "fields": [
+    {
+      "key": "contract_type",
+      "label": "Contratação",
+      "question": "Você tem CNPJ ou MEI ativo, ou deseja um plano sem CNPJ?",
+      "type": "choice",
+      "options": [
+        "mei",
+        "empresa",
+        "pf"
+      ],
+      "required": true,
+      "option_labels": {
+        "mei": "MEI",
+        "empresa": "Empresa",
+        "pf": "Pessoa física (sem CNPJ)"
+      }
+    },
+    {
+      "key": "cnpj_age",
+      "label": "Tempo de CNPJ",
+      "question": "Seu CNPJ está aberto há menos de 6 meses, de 6 meses a 2 anos, ou há mais de 2 anos?",
+      "type": "choice",
+      "options": [
+        "menos6",
+        "6a24",
+        "mais24"
+      ],
+      "required": false,
+      "required_when": {
+        "field": "contract_type",
+        "operator": "in",
+        "values": [
+          "mei",
+          "empresa"
+        ]
+      },
+      "option_labels": {
+        "menos6": "Menos de 6 meses",
+        "6a24": "De 6 meses a 2 anos",
+        "mais24": "Mais de 2 anos"
+      }
+    },
+    {
+      "key": "profession",
+      "label": "Situação profissional",
+      "question": "Você trabalha com carteira assinada, é profissional liberal, autônomo ou está em outra situação profissional?",
+      "type": "choice",
+      "options": [
+        "clt",
+        "liberal",
+        "autonomo",
+        "outra"
+      ],
+      "required": false,
+      "required_when": {
+        "field": "contract_type",
+        "operator": "in",
+        "values": [
+          "pf"
+        ]
+      },
+      "option_labels": {
+        "clt": "CLT",
+        "liberal": "Profissional liberal",
+        "autonomo": "Autônomo sem CNPJ",
+        "outra": "Outra situação"
+      }
+    },
+    {
+      "key": "people_count",
+      "label": "Quantidade de pessoas",
+      "question": "Para quantas pessoas você deseja cotar?",
+      "type": "integer",
+      "required": true
+    },
+    {
+      "key": "ages",
+      "label": "Idades",
+      "question": "Quais são as idades de cada uma dessas pessoas?",
+      "type": "ages",
+      "required": false,
+      "required_when": {
+        "field": "people_count",
+        "operator": "lte",
+        "value": 10
+      }
+    },
+    {
+      "key": "state",
+      "label": "Estado",
+      "question": "Em qual estado o plano será utilizado?",
+      "type": "choice",
+      "options": [
+        "ac",
+        "al",
+        "ap",
+        "am",
+        "ba",
+        "ce",
+        "df",
+        "es",
+        "go",
+        "ma",
+        "mt",
+        "ms",
+        "mg",
+        "pa",
+        "pb",
+        "pr",
+        "pe",
+        "pi",
+        "rj",
+        "rn",
+        "rs",
+        "ro",
+        "rr",
+        "sc",
+        "sp",
+        "se",
+        "to"
+      ],
+      "required": true
+    },
+    {
+      "key": "city",
+      "label": "Cidade",
+      "question": "Em qual cidade o plano será utilizado?",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "current_plan",
+      "label": "Plano atual",
+      "question": "Você já tem plano hoje? Se tiver, ele é individual/familiar, empresarial ou por adesão?",
+      "type": "choice",
+      "options": [
+        "nao",
+        "individual",
+        "empresa",
+        "adesao"
+      ],
+      "required": true,
+      "option_labels": {
+        "nao": "Não possui plano",
+        "individual": "Individual ou familiar",
+        "empresa": "Empresarial",
+        "adesao": "Por adesão"
+      }
+    },
+    {
+      "key": "current_cost",
+      "label": "Gasto mensal atual",
+      "question": "Quanto paga por mês somando todos: até R$ 500, de R$ 500 a R$ 1.000, de R$ 1.000 a R$ 2.000, mais de R$ 2.000, ou prefere não informar?",
+      "type": "choice",
+      "options": [
+        "ate500",
+        "500-1000",
+        "1000-2000",
+        "2000+",
+        "nd"
+      ],
+      "required": false,
+      "required_when": {
+        "field": "current_plan",
+        "operator": "in",
+        "values": [
+          "individual",
+          "empresa",
+          "adesao"
+        ]
+      },
+      "option_labels": {
+        "ate500": "Até R$ 500",
+        "500-1000": "R$ 500 a R$ 1.000",
+        "1000-2000": "R$ 1.000 a R$ 2.000",
+        "2000+": "Mais de R$ 2.000",
+        "nd": "Prefere não informar"
+      }
+    },
+    {
+      "key": "name",
+      "label": "Nome",
+      "question": "Como você se chama?",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "whatsapp",
+      "label": "WhatsApp",
+      "question": "Qual é seu WhatsApp com DDD?",
+      "type": "phone",
+      "required": true
+    },
+    {
+      "key": "email",
+      "label": "E-mail",
+      "question": "Se desejar, pode informar um e-mail para contato.",
+      "type": "email",
+      "required": false
+    },
+    {
+      "key": "hospital",
+      "label": "Hospital/laboratório de preferência",
+      "question": "Você tem algum hospital ou laboratório de preferência?",
+      "type": "text",
+      "required": false
+    },
+    {
+      "key": "interest",
+      "label": "Interesse/operadora mencionada",
+      "question": "Existe uma operadora ou opção em que você tenha interesse?",
+      "type": "text",
+      "required": false
+    }
+  ]
+}

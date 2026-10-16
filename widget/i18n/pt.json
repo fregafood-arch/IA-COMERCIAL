@@ -1,0 +1,17 @@
+{
+  "widget": {
+    "name": "Êxodo · IA Comercial",
+    "description": "Triagem para cotação com GPT. Respostas enviadas pelo Salesbot no canal da Kommo.",
+    "short_description": "Triagem de leads para cotação"
+  },
+  "salesbot": {
+    "name": "Qualificar com IA Comercial",
+    "endpoint": "URL HTTPS da aplicação + /webhooks/kommo/salesbot",
+    "channel": "Origem: instagram, facebook ou kommo",
+    "context": "Contexto: private_chat ou public_comment",
+    "collecting": "Aguardar a próxima mensagem",
+    "ready": "Dados reunidos para cotação",
+    "handoff": "Encaminhar ao consultor",
+    "private_chat": "Continuar em conversa privada"
+  }
+}
